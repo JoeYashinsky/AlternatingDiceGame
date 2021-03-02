@@ -57,13 +57,12 @@ btnHold.addEventListener('click', function () {
     document.getElementById(`score--${activePlayer}`).textContent = scores[activePlayer];
 
     // 2. Check if player' score has reached 100 (goal)
-    if (scores[activePlayer] >= 100) {
+    if (scores[activePlayer] >= 10) {
         // End the game
-        document.querySelector(`player--${activePlayer}`).classList.add('player--winner');
-        document.querySelector(`player--${activePlayer}`).classList.remove('player--active');
-
+        document.querySelector(`.player--${activePlayer}`).classList.add('player--winner');
+        document.querySelector(`.player--${activePlayer}`).classList.remove('player--active');
+    } else {
+        // 3. Switch to the other player
+        switchPlayer();
     }
-
-    // 3. Switch to the other player
-    switchPlayer();
-})
+});
